@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mysql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@database-mcp/mysql",
+        "--dsn",
+        "mysql://Rafael:Mendes-1734*@localhost:3306/mendes_db",
+        "--allow-write"
+      ]
+    }
+  }
+}

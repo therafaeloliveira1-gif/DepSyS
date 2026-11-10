@@ -1,0 +1,15 @@
+# Configuracion local de rutas del Tunel Cloudflare - DepSyS Motos Mendes
+# Tunnel ID oficial: b9e7289f-b191-4ec1-adff-0c0d4da357b9
+
+tunnel: b9e7289f-b191-4ec1-adff-0c0d4da357b9
+ingress:
+  # 1. Subdominio principal sin www
+  - hostname: depsys.motosmendes.com
+    service: http://localhost:80
+
+  # 2. Subdominio con www
+  - hostname: www.depsys.motosmendes.com
+    service: http://localhost:80
+
+  # 3. Regla por defecto (obligatoria en Cloudflare)
+  - service: http_status:404

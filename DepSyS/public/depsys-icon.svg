@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&amp;display=swap');
+    </style>
+    <filter id="icon-depth" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#7a0000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo Rojo Institucional Motos Mendes -->
+  <rect width="512" height="512" rx="108" fill="#e60000" />
+
+  <g filter="url(#icon-depth)">
+    <!-- Hexágono Exterior Blanco -->
+    <polygon points="256.00,52.00 382.44,125.00 382.44,285.00 256.00,358.00 129.56,285.00 129.56,125.00" 
+             fill="none" 
+             stroke="#ffffff" 
+             stroke-width="25" 
+             stroke-linejoin="round" 
+             stroke-linecap="round" />
+
+    <!-- Capa 1: Rombo Isométrico Superior -->
+    <polygon points="256.00,131.00 322.00,165.00 256.00,199.00 190.00,165.00" 
+             fill="none" 
+             stroke="#ffffff" 
+             stroke-width="19" 
+             stroke-linejoin="round" 
+             stroke-linecap="round" />
+
+    <!-- Capa 2: Chevron Isométrico 1 -->
+    <polyline points="190.00,201.00 256.00,235.00 322.00,201.00" 
+              fill="none" 
+              stroke="#ffffff" 
+              stroke-width="19" 
+              stroke-linejoin="round" 
+              stroke-linecap="round" />
+
+    <!-- Capa 3: Chevron Isométrico 2 -->
+    <polyline points="190.00,237.00 256.00,271.00 322.00,237.00" 
+              fill="none" 
+              stroke="#ffffff" 
+              stroke-width="19" 
+              stroke-linejoin="round" 
+              stroke-linecap="round" />
+  </g>
+
+  <!-- Tipografía Oficial DEPSYS -->
+  <text x="256.0" y="438" 
+        font-family="'Montserrat', 'Arial Black', system-ui, sans-serif" 
+        font-size="60" 
+        font-weight="900" 
+        letter-spacing="7" 
+        fill="#ffffff" 
+        text-anchor="middle">DEPSYS</text>
+</svg>

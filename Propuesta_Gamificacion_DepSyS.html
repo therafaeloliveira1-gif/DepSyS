@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Propuesta de Gamificación y Niveles - DepSyS</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 16mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.5;
+      font-size: 11pt;
+    }
+    .header {
+      border-bottom: 3px solid #e60000;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-logo {
+      background: #e60000;
+      color: white;
+      font-weight: 900;
+      font-size: 20pt;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 42px;
+    }
+    .brand-text h1 {
+      font-size: 18pt;
+      font-weight: 900;
+      color: #111827;
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+    .brand-text span {
+      color: #e60000;
+    }
+    .brand-text p {
+      font-size: 9pt;
+      color: #6b7280;
+      font-family: monospace;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .doc-meta {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #6b7280;
+      font-family: monospace;
+    }
+    .doc-meta strong {
+      color: #111827;
+    }
+    h2 {
+      font-size: 13pt;
+      font-weight: 900;
+      color: #111827;
+      margin-top: 18px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-left: 4px solid #e60000;
+      padding-left: 8px;
+      letter-spacing: -0.3px;
+    }
+    h3 {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #374151;
+      margin-top: 12px;
+      margin-bottom: 6px;
+    }
+    p {
+      margin-bottom: 10px;
+      font-size: 10pt;
+      color: #374151;
+      line-height: 1.45;
+    }
+    .intro-box {
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 16px;
+      font-size: 9.5pt;
+      color: #991b1b;
+      line-height: 1.4;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px 0;
+      font-size: 9pt;
+      page-break-inside: avoid;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 6px 10px;
+      text-align: left;
+    }
+    th {
+      background: #f9fafb;
+      font-weight: 800;
+      color: #111827;
+      text-transform: uppercase;
+      font-size: 8pt;
+      letter-spacing: 0.5px;
+    }
+    tr:nth-child(even) td {
+      background: #fafafa;
+    }
+    .formula-box {
+      background: #111827;
+      color: #f3f4f6;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin: 12px 0;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10pt;
+      line-height: 1.5;
+      page-break-inside: avoid;
+    }
+    .formula-highlight {
+      color: #f87171;
+      font-weight: bold;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 10px 0 16px 0;
+      page-break-inside: avoid;
+    }
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 10px 12px;
+      background: #ffffff;
+      font-size: 9pt;
+    }
+    .card-title {
+      font-weight: 800;
+      font-size: 9.5pt;
+      color: #111827;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 7.5pt;
+      font-family: monospace;
+      text-transform: uppercase;
+    }
+    .badge-red { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+    .badge-green { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+    .badge-amber { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+    .badge-purple { background: #f3e8ff; color: #7e22ce; border: 1px solid #d8b4fe; }
+
+    .roi-section {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 14px;
+      page-break-inside: avoid;
+    }
+    .roi-title {
+      color: #166534;
+      font-weight: 900;
+      font-size: 11pt;
+      margin-bottom: 6px;
+    }
+    .roi-list {
+      list-style-type: disc;
+      padding-left: 20px;
+      font-size: 9.5pt;
+      color: #14532d;
+      line-height: 1.45;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 20px;
+      font-size: 8pt;
+      color: #9ca3af;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 4px;
+      display: flex;
+      justify-content: space-between;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand">
+      <div class="brand-logo">M</div>
+      <div class="brand-text">
+        <h1>MOTOS <span>MENDES</span></h1>
+        <p>DepSyS • Sistema de Control y Telemetría de Depósito</p>
+      </div>
+    </div>
+    <div class="doc-meta">
+      <p><strong>DOCUMENTO EJECUTIVO</strong></p>
+      <p>Fecha: <strong>30/10/2026</strong></p>
+      <p>Versión: <strong>1.0 (Oficial)</strong></p>
+    </div>
+  </div>
+
+  <div class="intro-box">
+    <strong>Resumen de Propuesta:</strong> Implementación de una arquitectura de gamificación industrial (Warehouse Gamification) en DepSyS para transformar la preparación de pedidos en un sistema de misiones con puntos de experiencia (EXP), niveles y ranking mensual en tiempo real.
+  </div>
+
+  <!-- 1. CONCEPTO CENTRAL -->
+  <h2>1. Concepto Central: Del Trabajo a la Misión</h2>
+  <p>El sistema traduce cada acción física del operario en eventos medibles con retroalimentación inmediata, fomentando la productividad y la precisión sin estrés negativo:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 25%;">Elemento de Depósito</th>
+        <th style="width: 25%;">Equivalente en el Juego</th>
+        <th style="width: 50%;">Impacto Operativo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nota de Pedido</strong></td>
+        <td>📜 <span class="badge badge-purple">Misión Asignada</span></td>
+        <td>Dificultad calculada según SKUs, piezas y pasillos.</td>
+      </tr>
+      <tr>
+        <td><strong>Escaneo de Códigos</strong></td>
+        <td>🎯 <span class="badge badge-red">Objetivo de Misión</span></td>
+        <td>Validación obligatoria láser para garantizar cero piezas equivocadas.</td>
+      </tr>
+      <tr>
+        <td><strong>Velocidad y Calidad</strong></td>
+        <td>⚡ <span class="badge badge-amber">Multiplicador Combo</span></td>
+        <td>Premia cumplir el tiempo ideal sin registrar discrepancias en mesa.</td>
+      </tr>
+      <tr>
+        <td><strong>Puntos de EXP</strong></td>
+        <td>🌟 <span class="badge badge-green">Experiencia Acumulada</span></td>
+        <td>Moneda de mérito diaria para clasificaciones y posibles bonos.</td>
+      </tr>
+      <tr>
+        <td><strong>Rango del Operario</strong></td>
+        <td>🎖️ <span class="badge badge-purple">Nivel (1 al 50+)</span></td>
+        <td>Estatus visible en su perfil (desde Aprendiz hasta Maestro de Depósito).</td>
+      </tr>
+      <tr>
+        <td><strong>Pantalla de Supervisión</strong></td>
+        <td>🏆 <span class="badge badge-red">Leaderboard en Vivo</span></td>
+        <td>Podio mensual con medallas de Oro, Plata y Bronce en PC central.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 2. LA MATEMÁTICA DE LA EXP -->
+  <h2>2. La Matemática de la EXP (Fórmula Justa y Anti-Fraude)</h2>
+  <p>Para evitar distorsiones (ej: que un pedido de 100 arandelas otorgue más puntos que buscar 15 repuestos en 8 pasillos distintos), la fórmula pondera el <strong>desplazamiento físico</strong> frente a la <strong>cantidad de piezas</strong>:</p>
+
+  <div class="formula-box">
+    EXP_TOTAL = [ (SKUs_Únicos × 40 EXP) + (Piezas_Totales × 3 EXP) ] × Multiplicador_Tiempo + Bono_Calidad
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">🚶 Desplazamiento (SKUs Únicos)</div>
+      <p><strong>40 EXP por cada SKU distinto.</strong> Premia el esfuerzo de caminar entre pasillos, ubicar la bandeja y escanear el código físico.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">📦 Manipulación (Piezas Físicas)</div>
+      <p><strong>3 EXP por cada unidad física.</strong> Aporta experiencia proporcional sin desbalancear órdenes de repuestos pequeños en volumen.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">⚡ Multiplicador de Velocidad</div>
+      <p>Basado en el <strong>Tiempo Estándar Ideal</strong>:<br>
+      • Rápido (&le; 70% tiempo): <span class="badge badge-green">1.30x (Bonus Legendario)</span><br>
+      • Normal (&le; 100% tiempo): <span class="badge badge-amber">1.15x (Bonus Eficiencia)</span><br>
+      • Lento (&gt; 130% tiempo): <span class="badge badge-red">1.00x (Sin bonus)</span></p>
+    </div>
+    <div class="card">
+      <div class="card-title">🛡️ Bono de Calidad (Cero Errores)</div>
+      <p><strong>+150 EXP</strong> directo si la mesa de control valida la nota con <strong>100% de coincidencia</strong> (cero discrepancias y cero faltantes injustificados).</p>
+    </div>
+  </div>
+
+  <!-- EJEMPLO COMPARATIVO -->
+  <h3>Ejemplo Comparativo de Justicia Operativa</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Tipo de Pedido</th>
+        <th>Composición</th>
+        <th>Tiempo Real</th>
+        <th>Mesa</th>
+        <th>Cálculo Matemático</th>
+        <th>EXP Final</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Pedido Complejo</strong><br><small>(Mucho recorrido)</small></td>
+        <td>10 SKUs distintos<br>12 piezas totales</td>
+        <td>5.0 min (Dentro de meta)</td>
+        <td>0 errores</td>
+        <td>[(10 × 40) + (12 × 3)] × 1.15 + 150</td>
+        <td><strong style="color: #e60000; font-size: 11pt;">651 EXP</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Pedido de Volumen</strong><br><small>(1 solo estante)</small></td>
+        <td>1 SKU único<br>50 piezas (bujías)</td>
+        <td>2.0 min (Dentro de meta)</td>
+        <td>0 errores</td>
+        <td>[(1 × 40) + (50 × 3)] × 1.15 + 150</td>
+        <td><strong style="color: #2563eb; font-size: 11pt;">368 EXP</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- 3. RANGOS Y NIVELES -->
+  <h2>3. Rangos de Operario y Progresión</h2>
+  <p>La curva de progresión está calibrada para que los primeros niveles se desbloqueen en los primeros días, mientras que los rangos altos requieran constancia mensual:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 15%;">Rango</th>
+        <th style="width: 30%;">Título Operativo</th>
+        <th style="width: 25%;">EXP Requerida</th>
+        <th style="width: 30%;">Tiempo Estimado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nivel 1 - 5</strong></td>
+        <td>🌱 <strong>Separador Aprendiz</strong></td>
+        <td>500 a 2.500 EXP</td>
+        <td>Primeros 3 a 5 pedidos (Día 1)</td>
+      </tr>
+      <tr>
+        <td><strong>Nivel 6 - 15</strong></td>
+        <td>⚡ <strong>Operador Ágil</strong></td>
+        <td>3.200 a 12.000 EXP</td>
+        <td>Semana 1 a 2 de constancia</td>
+      </tr>
+      <tr>
+        <td><strong>Nivel 16 - 30</strong></td>
+        <td>🏹 <strong>Especialista de Pasillo</strong></td>
+        <td>14.000 a 38.000 EXP</td>
+        <td>Mes 1 (Separador consolidado)</td>
+      </tr>
+      <tr>
+        <td><strong>Nivel 31 - 45</strong></td>
+        <td>🛡️ <strong>Capitán de Depósito</strong></td>
+        <td>42.000 a 85.000 EXP</td>
+        <td>Mes 2 a 3 (Alta productividad)</td>
+      </tr>
+      <tr>
+        <td><strong>Nivel 46 - 50+</strong></td>
+        <td>👑 <strong>Maestro de Depósito (Leyenda)</strong></td>
+        <td>90.000+ EXP</td>
+        <td>Élite del depósito (&ge;99% precisión)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. LÓGICA DE NEGOCIO Y ROI -->
+  <h2>4. ¿Por Qué Tiene Lógica para la Empresa? (Justificación Financiera y Operativa)</h2>
+  <p>La gamificación industrial no es un juego cosmético; es una metodología probada en empresas como Amazon y Mercado Libre para resolver problemas crónicos del depósito:</p>
+
+  <div class="roi-section">
+    <div class="roi-title">Beneficios Clave para la Gerencia de Motos Mendes</div>
+    <ul class="roi-list">
+      <li><strong>Reducción de Reclamos y Faltantes:</strong> Como el Bono de Calidad (+150 EXP) exige validación limpia en mesa, el separador revisa cuidadosamente antes de entregar, reduciendo despachos equivocados a clientes del interior.</li>
+      <li><strong>Eliminación del "Tiempo Muerto":</strong> El ranking y los multiplicadores de velocidad incentivan al operario a solicitar o escanear su siguiente nota de inmediato para no enfriar su promedio.</li>
+      <li><strong>Detección Automática de Cuellos de Botella:</strong> El sistema identifica qué operarios tienen mayor dificultad en pasillos específicos y permite capacitar con datos reales, no impresiones subjetivas.</li>
+      <li><strong>Cero Carga Administrativa:</strong> Todos los cálculos los realiza el servidor Node.js/MySQL en milisegundos tras cerrar la nota en mesa. El supervisor no tiene que calcular planillas manuales.</li>
+      <li><strong>Justicia en Incentivos:</strong> Permite premiar con bonos o reconocimientos a los trabajadores que realmente mueven la empresa con métricas objetivas y auditables.</li>
+    </ul>
+  </div>
+
+  <!-- 5. IMPLEMENTACIÓN TÉCNICA -->
+  <h2>5. Plan de Implementación en DepSyS</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Fase</th>
+        <th>Módulo</th>
+        <th>Acción Técnica</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Fase 1</strong></td>
+        <td>Backend & Base de Datos</td>
+        <td>Creación de tablas <code>operarios_gamificacion</code> e <code>historial_exp</code>. Cálculo automático al cerrar nota en mesa.</td>
+        <td><span class="badge badge-green">Listo para iniciar</span></td>
+      </tr>
+      <tr>
+        <td><strong>Fase 2</strong></td>
+        <td>App Picking (Móvil)</td>
+        <td>Animación de misión cumplida al entregar canasta, barra de EXP y medalla de rango en perfil.</td>
+        <td><span class="badge badge-amber">Planificado</span></td>
+      </tr>
+      <tr>
+        <td><strong>Fase 3</strong></td>
+        <td>App Supervisor (PC)</td>
+        <td>Pantalla de Leaderboard con podio (🥇 Oro, 🥈 Plata, 🥉 Bronce) y telemetría por operario.</td>
+        <td><span class="badge badge-amber">Planificado</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <span>Motos Mendes S.A. • DepSyS Core 2026</span>
+    <span>Documento de Propuesta Interna • Confidencial</span>
+  </div>
+
+</body>
+</html>
+
