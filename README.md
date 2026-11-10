@@ -7,7 +7,7 @@
 Este repositorio privado se utiliza exclusivamente como **servidor seguro de distribución y auto-actualización** para las terminales y dispositivos del ecosistema DepSyS:
 
 * 💻 **DepSyS Desktop (Windows):** Terminales PC de Supervisión y Mesas de Control (`DepSyS-Desktop-Setup.exe`).
-* 📱 **MendesPicking (Android):** Aplicación móvil para colectores láser de recolectores y separadores (`MendesPicking-DepSyS.apk`).
+* 📱 **DepSyScan (Android):** Aplicación móvil para colectores láser de recolectores y separadores (`DepSyScan.apk` / `MendesPicking-DepSyS.apk`).
 
 ---
 
@@ -18,3 +18,4 @@ Para consultar o descargar las últimas versiones oficiales, ingresa a la secci�
 ---
 
 &copy; 2026 Motos Mendes S.A. — Todos los derechos reservados.
+
