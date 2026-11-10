@@ -1,73 +1,11 @@
 # ==============================================================================
-# .gitignore Oficial - DepSyS Motos Mendes S.A.
+# Repositorio Oficial de Releases - DepSyS Motos Mendes S.A.
+# Este repositorio se utiliza exclusivamente para alojar y distribuir Releases.
 # ==============================================================================
 
-# Bases de Datos Pesadas y Respaldos Binarios (Exceden límites de GitHub)
-*.FDB
-*.fdb
-*.zip
-*.rar
-*.7z
-*.tar.gz
-*.iso
+# Ignorar todo el código fuente local
+/*
 
-# Repositorios Independientes Satélites (Tienen su propio git y repo)
-App-venta/
-App-Envios/
-estudio y pruebas/
-tunnel/*.exe
-
-# Dependencias Node.js
-**/node_modules/
-**/.pnpm-store/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Compilados y Empaquetados Web
-**/dist/
-**/build/
-**/out/
-**/.vite/
-
-# Rust y Tauri (Compilación de escritorio)
-**/src-tauri/target/
-**/src-tauri/gen/
-**/.cargo/
-
-# Android y Capacitor (Compilación móvil)
-**/android/app/build/
-**/android/.gradle/
-**/.gradle/
-**/capacitor-cordova-android-plugins/
-local.properties
-
-# Archivos Binarios e Instaladores (Se publican en GitHub Releases, no en Git)
-*.exe
-*.msi
-*.apk
-*.aab
-*.dll
-
-# Firmas de Producción y Secretos (Seguridad Estricta)
-**/FIRMA_PRODUCCION_ORIGINAL/
-*.keystore
-*.jks
-*.p12
-*.pfx
-.env
-.env.local
-.env.*.local
-
-# Logs y Temporales de Sistema
-*.log
-**/__pycache__/
-*.pyc
-.DS_Store
-Thumbs.db
-
-# IDEs
-.vscode/
-.idea/
-*.suo
-*.user
+# Excepciones que sí se mantienen en el repositorio
+!/.gitignore
+!/README.md
