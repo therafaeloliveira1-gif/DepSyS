@@ -1,0 +1,67 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "DepSyS",
+  "version": "0.0.21",
+  "identifier": "com.motosmendes.depsys",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:3003",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "DepSyS • Sistema de Depósito",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 1024,
+        "minHeight": 700,
+        "resizable": true,
+        "maximized": true,
+        "fullscreen": false,
+        "decorations": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "uninstallerIcon": "icons/icon.ico",
+        "headerImage": "icons/nsis-header.bmp",
+        "sidebarImage": "icons/nsis-sidebar.bmp",
+        "uninstallerHeaderImage": "icons/nsis-header.bmp",
+        "installerHooks": "hooks.nsh",
+        "installMode": "both",
+        "languages": [
+          "Spanish"
+        ],
+        "displayLanguageSelector": false
+      },
+      "wix": {
+        "language": "es-ES"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEE5NkQ0MjAxNUM2NzYzMDAKUldRQVkyZGNBVUp0cVZnVkF0Zmsxc3lldEtHUjJaNGxkZHhDTlRDOHY3RXhRY2VSTS9tbmN4eHkK",
+      "endpoints": [
+        "https://github.com/therafaeloliveira1-gif/DepSyS/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}

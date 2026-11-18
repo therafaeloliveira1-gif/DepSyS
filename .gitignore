@@ -1,0 +1,35 @@
+# Node dependencies
+node_modules/
+
+# Frontend build outputs
+dist/
+build/
+
+# Tauri & Rust build artifacts
+src-tauri/target/
+src-tauri/gen/
+**/*.exe
+**/*.msi
+**/*.sig
+
+# Private updater cryptographic keys
+*.key
+depsys-updater.key
+
+# Environment & local settings
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db

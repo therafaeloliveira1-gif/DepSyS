@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#ffffff" />
+  <g transform="translate(256, 256)">
+    <!-- 1. Hexagono Rojo -->
+    <polygon points="0,-184 160,-92 160,92 0,184 -160,92 -160,-92" 
+             fill="none" stroke="#e60000" stroke-width="26" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- 2. Diamante Superior Rojo -->
+    <polygon points="0,-74 66,-37 0,0 -66,-37" 
+             fill="none" stroke="#e60000" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- 3. Bandeja Intermedia Roja -->
+    <polyline points="-66,6 0,43 66,6" 
+              fill="none" stroke="#e60000" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+
+    <!-- 4. Bandeja Inferior Negra -->
+    <polyline points="-66,48 0,85 66,48" 
+              fill="none" stroke="#18181b" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+  </g>
+</svg>
