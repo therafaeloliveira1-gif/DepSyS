@@ -1,6 +1,6 @@
 [package]
 name = "depsys-desktop"
-version = "0.0.22"
+version = "0.0.23"
 description = "DepSyS - Sistema de Depósito"
 authors = ["you"]
 license = ""
