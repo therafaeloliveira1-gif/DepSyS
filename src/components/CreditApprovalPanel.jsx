@@ -101,7 +101,7 @@ export default function CreditApprovalPanel({
     else setRefreshing(true);
     try {
       const [resPend, resEsp, resConf] = await Promise.all([
-        fetchPedidosPendientesFirebird(60),
+        fetchPedidosPendientesFirebird(150),
         fetchPedidosEnEspera(),
         fetchPedidosConfirmados()
       ]);
@@ -354,8 +354,8 @@ export default function CreditApprovalPanel({
     return [...list].sort((a, b) => {
       const da = new Date(a.fecha_pedido).getTime();
       const db = new Date(b.fecha_pedido).getTime();
-      if (!isNaN(da) && !isNaN(db) && da !== db) return da - db;
-      return Number(a.num_pedido || 0) - Number(b.num_pedido || 0);
+      if (!isNaN(da) && !isNaN(db) && da !== db) return db - da;
+      return Number(b.num_pedido || 0) - Number(a.num_pedido || 0);
     });
   }, [pedidosPendientes, searchTerm, filtroTipo]);
 
@@ -364,8 +364,8 @@ export default function CreditApprovalPanel({
     return [...list].sort((a, b) => {
       const da = new Date(a.fecha_ingreso || a.fecha_pedido).getTime();
       const db = new Date(b.fecha_ingreso || b.fecha_pedido).getTime();
-      if (!isNaN(da) && !isNaN(db) && da !== db) return da - db;
-      return Number(a.num_pedido || 0) - Number(b.num_pedido || 0);
+      if (!isNaN(da) && !isNaN(db) && da !== db) return db - da;
+      return Number(b.num_pedido || 0) - Number(a.num_pedido || 0);
     });
   }, [pedidosEnEspera, searchTerm, filtroTipo]);
 

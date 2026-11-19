@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "DepSyS",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "identifier": "com.motosmendes.depsys",
   "build": {
     "frontendDist": "../dist",

@@ -148,7 +148,7 @@ export default function App() {
         fetchDiscrepancias(),
         fetchDiscrepanciasRecurrentes(),
         fetchPedidosConfirmados(),
-        fetchPedidosPendientesFirebird(50)
+        fetchPedidosPendientesFirebird(150)
       ]);
 
       if (resStatus.success) {
