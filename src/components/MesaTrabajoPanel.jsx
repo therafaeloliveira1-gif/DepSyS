@@ -4,7 +4,6 @@ import TableQueuePanel from './mesa/TableQueuePanel';
 import ReviewChecklistPanel from './mesa/ReviewChecklistPanel';
 import TableConfigModal from './mesa/TableConfigModal';
 import OrderFinishedSuccessModal from './mesa/OrderFinishedSuccessModal';
-import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { 
   fetchColaMesa, 
   fetchDetalleNota, 
@@ -128,37 +127,6 @@ export default function MesaTrabajoPanel({
     setFinishedMetrics(null);
     cargarColaMesa(true);
   }
-
-  // Atajos de teclado para operaciones sin mouse
-  useKeyboardShortcuts({
-    onSpace: () => {
-      if (finishedMetrics) return;
-      if (activeNota && activeNota.estado === 'ASIGNADO_MESA') {
-        handleStartReview(activeNota.id);
-      }
-    },
-    onEnter: () => {
-      if (finishedMetrics) {
-        handleNextOrder();
-      } else if (activeNota && activeNota.estado === 'EN_MESA') {
-        handleFinishReview(activeNota.id);
-      }
-    },
-    onArrowUp: () => {
-      if (finishedMetrics || colaNotas.length === 0) return;
-      const currentIndex = colaNotas.findIndex(n => n.id === activeNota?.id);
-      if (currentIndex > 0) {
-        cargarDetalleNota(colaNotas[currentIndex - 1]);
-      }
-    },
-    onArrowDown: () => {
-      if (finishedMetrics || colaNotas.length === 0) return;
-      const currentIndex = colaNotas.findIndex(n => n.id === activeNota?.id);
-      if (currentIndex >= 0 && currentIndex < colaNotas.length - 1) {
-        cargarDetalleNota(colaNotas[currentIndex + 1]);
-      }
-    }
-  });
 
   return (
     <div className={`flex flex-col w-full bg-[#f8fafc] text-zinc-900 select-none overflow-hidden ${
